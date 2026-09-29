@@ -1,6 +1,7 @@
+document.documentElement.classList.add('js-ready');
 document.addEventListener('DOMContentLoaded',()=>{
   const menu=document.querySelector('.hamburger'), nav=document.querySelector('nav');
-  if(menu&&nav) menu.addEventListener('click',()=>nav.classList.toggle('open'));
+  if(menu&&nav) menu.addEventListener('click',()=>nav.classList.toggle('mobile-open'));
 
   // Numbered image system: every image slot uses a number.
   // Example: images/1.jpeg OR images/1.jpg. The loader tries both.
@@ -19,7 +20,24 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     };
     img.src=`${base}.jpeg`;
+    img.alt = img.alt || `Uplift Hackathon photo ${n}`;
   });
+
+  // Reveal sections safely. Without this, .reveal would remain hidden by CSS.
+  const reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const revealObserver=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },{threshold:.08});
+    reveals.forEach(el=>revealObserver.observe(el));
+  }else{
+    reveals.forEach(el=>el.classList.add('show'));
+  }
 
   const progress=document.querySelector('.progress');
   if(progress){
