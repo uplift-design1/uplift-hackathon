@@ -1,0 +1,10 @@
+REQUIRED IMAGE NAMES
+1.jpeg
+2.jpeg
+winner1.jpeg
+winner2.jpeg
+ssebunya.jpeg
+Past.jpeg
+Kenyan.jpeg
+
+No new images are needed. The website reuses these images across the expanded pages.
