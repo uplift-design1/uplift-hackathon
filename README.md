@@ -18,3 +18,7 @@ The ZIP contains the website code and logo, but not personal/event photographs. 
 
 ## GitHub Pages
 Upload the contents of this folder to the root of your repository and push to `main`. The included GitHub Actions workflow can deploy the site through GitHub Pages.
+
+
+## v7 fix
+The site no longer depends on JavaScript to reveal page content. All sections render immediately, including on mobile browsers. The hamburger menu has a dedicated mobile-open style.

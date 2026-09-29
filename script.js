@@ -23,21 +23,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     img.alt = img.alt || `Uplift Hackathon photo ${n}`;
   });
 
-  // Reveal sections safely. Without this, .reveal would remain hidden by CSS.
-  const reveals=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    const revealObserver=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },{threshold:.08});
-    reveals.forEach(el=>revealObserver.observe(el));
-  }else{
-    reveals.forEach(el=>el.classList.add('show'));
-  }
+  // Sections are visible by default; animations never control page visibility.
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
 
   const progress=document.querySelector('.progress');
   if(progress){
