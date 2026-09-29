@@ -1,1 +1,9 @@
-Put the real event images in this folder. Expected names: winner.jpg, ssebunya.jpg, third.jpg, medal.jpg, stage.jpg, coding.jpg, past-2025.jpg, past-2024.jpg. The site references images only from this root-level images folder.
+ADD YOUR PHOTOS HERE
+
+Use numbered names only:
+1.jpeg or 1.jpg
+2.jpeg or 2.jpg
+3.jpeg or 3.jpg
+...
+
+The website accepts either .jpeg or .jpg automatically.
